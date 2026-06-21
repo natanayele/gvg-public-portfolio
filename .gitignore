@@ -22,3 +22,7 @@ rad.json
 #Test results file
 TestResults.xml
 projects.json
+*.md
+*.html
+*.txt
+.nojekyll
