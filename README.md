@@ -1,18 +1,12 @@
 # Green Value Group Public Portfolio
 
-## Release
+Release `public-showcase-v0.7.1`.
 
-`public-showcase-v0.7.0`
+## Important files
 
-## Architecture
+- `index.html` — dashboard application shell
+- `data/projects.json` — public project records
+- `docs/guzo-charge/` — Guzo Charge public documents
+- `EDIT_PROJECTS.md` — safe editing guide
 
-- `index.html` — presentation and application logic
-- `data/projects.json` — all public project and showcase records
-- `EDIT_PROJECTS.md` — editing instructions
-- `.nojekyll` — GitHub Pages compatibility
-
-Upload or replace `index.html`, the complete `data` folder, `EDIT_PROJECTS.md`
-and `README.md` in the same GitHub Pages repository root.
-
-Do not publish internal financial records, private Drive links, cap tables,
-personal data, draft token documents or unapproved investment terms.
+Upload the complete folder contents to the root of the GitHub Pages repository.
