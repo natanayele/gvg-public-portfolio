@@ -210,17 +210,19 @@ tr:hover td{background:var(--gbg)}
 @media(max-width:660px){.table-toolbar{align-items:flex-start;flex-direction:column}.row-actions{width:100%}.row-actions .btn{flex:1;justify-content:center}}
 
 /* PUBLIC RELEASE */
-.unlock-section{background:var(--gbg);border:1px solid #b8dfc8;border-radius:10px;padding:14px}
-.unlock-section h3{color:var(--green)}
 .public-disclaimer{font-size:.75rem;color:var(--muted)}
 @media(max-width:700px){.nav{justify-content:flex-end}.nav button{padding:7px 9px}}
+
+/* PUBLIC RELEASE v0.7.1 */
+.unlock-section{background:var(--gbg);border:1px solid #b8dfc8;border-radius:10px;padding:14px}
+.unlock-section h3{color:var(--green)}
 </style>
-<meta content="Explore Green Value Group projects in engineering, workforce development, applied research, local manufacturing and high-impact venture development." name="description"/><meta content="Green Value Group Portfolio" property="og:title"/><meta content="Projects, demonstrators and partnership opportunities from Green Value Group." property="og:description"/><meta content="website" property="og:type"/><meta content="public-showcase-v0.7.0" name="gvg-release"/></head>
+<meta content="Explore Green Value Group projects in engineering, workforce development, applied research, local manufacturing and high-impact venture development." name="description"/><meta content="Green Value Group Portfolio" property="og:title"/><meta content="Projects, demonstrators and partnership opportunities from Green Value Group." property="og:description"/><meta content="website" property="og:type"/><meta content="public-showcase-v0.7.1" name="gvg-release"/></head>
 <body>
 <div class="topbar"><div class="tbi">
 <div class="brand">
 <div class="mark">GV</div>
-<div><div>GVG Portfolio Navigator</div><div class="brand-sub">Green Value Group · Public Showcase v0.7.0</div></div>
+<div><div>GVG Portfolio Navigator</div><div class="brand-sub">Green Value Group · Public Showcase v0.7.1</div></div>
 </div>
 <nav class="nav"><button class="active" data-view="showcase">Showcase</button><button data-view="portfolio">Projects</button><button data-view="support">Get involved</button></nav>
 </div></div>
@@ -402,12 +404,11 @@ tr:hover td{background:var(--gbg)}
 <!-- ROADMAP -->
 </main>
 <footer class="footer">
-<div class="shell">Green Value Group Portfolio · Public Showcase v0.6 · Projects are subject to validation, partnership and formal approvals.</div>
+<div class="shell">Green Value Group Portfolio · Public Showcase v0.7.1 · Projects are subject to validation, partnership and formal approvals.</div>
 </footer>
 <!-- MODAL -->
 <div class="modal" id="projectModal">
-<div class="modal-card">
-<div class="modal-head">
+<div class="modal-card"><div class="modal-head">
 <div><div class="id-tag" id="modalId"></div><h2 id="modalTitle"></h2></div>
 <button class="close-btn" id="closeModal">✕</button>
 </div>
@@ -421,11 +422,12 @@ tr:hover td{background:var(--gbg)}
 <div class="modal-section"><h3>Project evidence and resources</h3><div class="asset-list" id="modalAssets"></div></div>
 <div class="actions" style="margin-top:18px">
 <button class="btn primary" id="modalSupport">Get involved with this project</button>
-<a class="btn ghost" id="modalUrl" rel="noopener" style="display:none" target="_blank">View website ↗</a>
+<a class="btn ghost" id="modalUrl" rel="noopener" style="display:none" target="_blank">Open public page ↗</a>
 </div>
 </div>
 </div>
 <script>
+// ── DATA ─────────────────────────────────────────────────────────────────────
 // ── DATA ─────────────────────────────────────────────────────────────────────
 const DATA_URL='data/projects.json';
 
@@ -448,7 +450,7 @@ function showDataLoadError(error){
     'afterbegin',
     `<div class="notice" style="border-color:#c03838;background:#fff1f1;color:#7e2424">
       The project information could not be loaded. Confirm that <b>data/projects.json</b>
-      exists in the repository and contains valid JSON.
+      exists in the repository root folder and contains valid JSON.
     </div>`
   );
 }
@@ -515,7 +517,7 @@ function renderShowcase(){
   const A=allAssets(), S=currentMeta.showcase||{};
   $('mProjects').textContent=projects.length;
   $('mPilots').textContent=projects.filter(p=>p.featured).length;
-  $('mVersion').textContent=currentMeta.version||'0.7.0';
+  $('mVersion').textContent=currentMeta.version||'0.5';
   $('mAssets').textContent=A.length;
   $('heroMetrics').innerHTML=
     metricEl('Active or pilot',projects.filter(p=>['Active','Pilot'].includes(p.status)).length)+
@@ -562,12 +564,11 @@ function openProject(id){
   $('modalDecision').textContent=p.nextDecision;
   $('modalRisk').textContent=p.keyRisk||'Implementation requirements are being documented.';
   $('modalUnlock').textContent=p.supportOutcome||'Support will help complete the next documented milestone.';
-  $('modalSource').textContent=`Owner: ${p.owner||'Unassigned'} · Source: ${p.sourceTitle||'Not recorded'} · ${p.sourceStatus||'Source status not recorded'} · Updated ${p.updatedAt||'unknown'}`;
   $('modalPills').innerHTML=(p.publicBadges?.length?p.publicBadges:[p.status,p.archetype,p.sector,p.priority]).map(x=>`<span class="pill">${esc(x)}</span>`).join('');
   $('modalAsks').innerHTML=(p.supporterAsk||[]).map(x=>`<span class="pill green">${esc(x)}</span>`).join('')||'<span style="color:var(--muted);font-size:.84rem">No specific asks at this time.</span>';
   $('modalAssets').innerHTML=(p.assets||[]).map(a=>`
     <div class="asset">
-      <div><b>${esc(a.name)}</b><span>${esc(a.id)} · ${esc(a.type)}</span></div>
+      <div><b>${a.url?`<a href="${esc(a.url)}" target="_blank" rel="noopener">${esc(a.name)}</a>`:esc(a.name)}</b><span>${esc(a.id)} · ${esc(a.type)}</span></div>
       <span class="pill">${esc(a.status)}</span>
     </div>`).join('')||'<p style="color:var(--muted);font-size:.84rem">No assets registered.</p>';
   const urlEl=$('modalUrl');
@@ -615,12 +616,7 @@ if(sendContact) sendContact.onclick=()=>{
 function download(name,text,type){const u=URL.createObjectURL(new Blob([text],{type})),a=document.createElement('a');a.href=u;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(u),500)}
 
 // ── INIT ──────────────────────────────────────────────────────────────────────
-function renderAll(){
-  renderShowcase();
-  renderPortfolio();
-  supportOptions();
-  if($('portfolioCount'))$('portfolioCount').textContent=projects.length;
-}
+function renderAll(){renderShowcase();renderPortfolio();supportOptions();if($('portfolioCount'))$('portfolioCount').textContent=projects.length;}
 async function initializeApp(){
   try{
     await loadRegistry();
