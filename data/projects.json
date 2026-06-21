@@ -1,13 +1,13 @@
 {
   "meta": {
     "title": "GVG Portfolio Registry",
-    "version": "0.7.0",
+    "version": "0.7.1",
     "updatedAt": "2026-06-20",
-    "projectCount": 23,
-    "assetCount": 47,
+    "projectCount": 24,
+    "assetCount": 51,
     "source": "Updated master portfolio, ChatGPT project history and Drive-verified project records",
     "publicDataNotice": "Public-compatible dataset. Internal cash balances, detailed cap tables, confidential Drive links and draft investment structures are excluded.",
-    "changeSummary": "Externalized project records to data/projects.json; applied approved Round 1 supporter messaging; repositioned Muday Marketing as an active GVG initiative.",
+    "changeSummary": "Fixed project modal bug; externalized project data; added Guzo Charge EV charging venture.",
     "showcase": {
       "headline": "From organized ideas to governed implementation",
       "subheadline": "Green Value Group is building an Ethiopia-first portfolio of engineering services, technical talent, applied research and locally implemented products.",
@@ -27,7 +27,8 @@
         "Green Value Group",
         "PavePath Design",
         "PavePath Technologies & Innovation Hub",
-        "Etraincon"
+        "Etraincon",
+        "Guzo Charge"
       ],
       "submissionSequence": [
         {
@@ -52,7 +53,7 @@
         }
       ]
     },
-    "editingModel": "Public project information is maintained in data/projects.json. The application shell remains in index.html."
+    "editingModel": "Public project information is maintained in data/projects.json. The app shell remains in index.html."
   },
   "projects": [
     {
@@ -333,6 +334,85 @@
         }
       ],
       "supportOutcome": "Support will help this project complete its next measurable milestone through documented, project-specific collaboration."
+    },
+    {
+      "id": "GVG-GUZO-CHARGE-001",
+      "name": "Guzo Charge",
+      "shortName": "Guzo Charge",
+      "archetype": "EV charging venture",
+      "sector": "E-mobility, clean energy and charging infrastructure",
+      "status": "Feasibility",
+      "priority": "Investor-ready concept",
+      "readiness": 62,
+      "documentation": 88,
+      "impact": 86,
+      "strategicScore": 78,
+      "summary": "Guzo Charge is a proposed Addis Ababa EV-charging venture combining charge-point operation, turnkey installation/EPC, locally assembled OpenEVSE-based AC chargers and an OCPP + Telebirr software layer.",
+      "currentMilestone": "A feasibility study, project proposal and investor one-pager have been prepared. The current verdict is conditional go as a service-first hybrid, not a hardware-manufacturing-first play.",
+      "nextDecision": "Validate customs/VAT treatment, charging tariff economics, certification timeline, EVCS licensing requirements and initial site partnerships before deploying seed capital.",
+      "keyRisk": "The venture must validate regulatory costs, tariff assumptions, FX exposure, licensing and certification before moving from documented opportunity to capital deployment.",
+      "supporterAsk": [
+        "EV charging site hosts in Addis Ababa",
+        "Electrical and EVSE certification advisers",
+        "Telebirr/OCPP software integration partners",
+        "Seed investors or strategic CPO partners",
+        "Government and utility introductions"
+      ],
+      "supportOutcome": "Support will move Guzo Charge from investment-grade documentation to a validated Phase 1 pilot with sites, permits, supplier pathway, localized software and first charging units.",
+      "publicBadges": [
+        "CONDITIONAL GO",
+        "SEED-READY VALIDATION",
+        "SERVICE-FIRST EV CHARGING"
+      ],
+      "publicUrl": "docs/guzo-charge/investor-one-pager.html",
+      "assets": [
+        {
+          "id": "GVG-GUZO-CHARGE-DOC-001",
+          "type": "Feasibility study",
+          "name": "Guzo Charge Feasibility Study",
+          "status": "Primary",
+          "valueMethod": "Investor readiness",
+          "url": "docs/guzo-charge/feasibility-study.html"
+        },
+        {
+          "id": "GVG-GUZO-CHARGE-DOC-002",
+          "type": "Project proposal",
+          "name": "Guzo Charge Project Proposal",
+          "status": "Primary",
+          "valueMethod": "Investor readiness",
+          "url": "docs/guzo-charge/project-proposal.html"
+        },
+        {
+          "id": "GVG-GUZO-CHARGE-DOC-003",
+          "type": "Investor one-pager",
+          "name": "Guzo Charge Investor One-Pager",
+          "status": "Primary",
+          "valueMethod": "Investor readiness",
+          "url": "docs/guzo-charge/investor-one-pager.html"
+        },
+        {
+          "id": "GVG-GUZO-CHARGE-DOC-004",
+          "type": "Investor one-pager PDF",
+          "name": "Guzo Charge Investor One-Pager PDF",
+          "status": "Primary",
+          "valueMethod": "Investor readiness",
+          "url": "docs/guzo-charge/investor-one-pager.pdf"
+        }
+      ],
+      "reviewStatus": "New project added",
+      "owner": "Green Value Group / PavePath Technologies incubation",
+      "parentId": "GVG-ORG-001",
+      "sourceTitle": "Guzo Charge feasibility study, project proposal and investor one-pager",
+      "sourceStatus": "Uploaded project documents added to public release",
+      "updatedAt": "2026-06-20",
+      "confidence": "Medium",
+      "featured": true,
+      "isNew": true,
+      "relationships": [
+        "GVG-PAVE-TECH-001",
+        "GVG-ETR-001",
+        "GVG-MUDAY-001"
+      ]
     },
     {
       "id": "GVG-PAVE-EFVR-001",
