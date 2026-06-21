@@ -1,7 +1,27 @@
 # Editing project information
 
-All public project data is now in `data/projects.json`.
+All public project records are stored in:
 
-Search for a stable project ID, edit the public fields, and preserve valid JSON syntax. Do not publish private Drive links, internal cash details, cap tables, draft token terms, personal data, or unapproved investment claims.
+`data/projects.json`
 
-Fields to edit: `summary`, `currentMilestone`, `nextDecision`, `keyRisk`, `supporterAsk`, `supportOutcome`, `publicBadges`, `publicUrl`.
+## Most important public fields
+
+- `summary` — What we are building
+- `currentMilestone` — Progress and current activity
+- `nextDecision` — Next measurable outcome
+- `keyRisk` — What must be in place
+- `supporterAsk` — Ways to participate
+- `supportOutcome` — What support will unlock
+- `whyNow` — Why a supporter should act now
+- `evidenceLevel` — Public proof level
+- `publicBadges` — Up to three short project badges
+- `supportPackageFit` — Which support packages fit the project
+- `publicUrl` — Official public website or one-pager
+
+## Rules
+
+- Never change or reuse a stable `id`.
+- Do not publish internal cash balances, private Drive links, cap tables, personal data, draft token terms or unapproved investment claims.
+- Describe future results as targets or milestones, not guarantees.
+- Keep asks specific and actionable.
+- Validate JSON before committing. A trailing comma can break the dashboard.
