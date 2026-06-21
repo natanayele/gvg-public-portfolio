@@ -1,13 +1,13 @@
 {
   "meta": {
     "title": "GVG Portfolio Registry",
-    "version": "0.7.1",
-    "updatedAt": "2026-06-20",
+    "version": "0.8.0",
+    "updatedAt": "2026-06-21",
     "projectCount": 24,
     "assetCount": 51,
     "source": "Updated master portfolio, ChatGPT project history and Drive-verified project records",
-    "publicDataNotice": "Public-compatible dataset. Internal cash balances, detailed cap tables, confidential Drive links and draft investment structures are excluded.",
-    "changeSummary": "Fixed project modal bug; externalized project data; added Guzo Charge EV charging venture.",
+    "publicDataNotice": "Public-compatible dataset. This dashboard is not a securities offering, token sale, crowdfunding page or promise of financial return. Internal cash balances, cap tables, private Drive links, personal data, confidential legal records and draft token structures remain excluded.",
+    "changeSummary": "Implemented supporter-conversion dashboard: event-delegated project cards, priority opportunities, audience paths, proof badges, support packages, evidence library, stronger public disclaimer and improved Guzo Charge positioning.",
     "showcase": {
       "headline": "From organized ideas to governed implementation",
       "subheadline": "Green Value Group is building an Ethiopia-first portfolio of engineering services, technical talent, applied research and locally implemented products.",
@@ -28,7 +28,8 @@
         "PavePath Design",
         "PavePath Technologies & Innovation Hub",
         "Etraincon",
-        "Guzo Charge"
+        "Guzo Charge",
+        "Muday Marketing"
       ],
       "submissionSequence": [
         {
@@ -51,6 +52,95 @@
           "date": "July 12, 2026",
           "label": "Stethoscope prototype grant"
         }
+      ],
+      "priorityOpportunityIds": [
+        "GVG-PAVE-DES-001",
+        "GVG-ETR-001",
+        "GVG-PAVE-TECH-001",
+        "GVG-GUZO-CHARGE-001",
+        "GVG-MUDAY-001"
+      ],
+      "audiencePaths": [
+        {
+          "id": "expert",
+          "label": "I can contribute expertise",
+          "description": "Engineering, manufacturing, EV charging, software, research, curriculum, QA, compliance or design support.",
+          "projectIds": [
+            "GVG-EFVR-001",
+            "GVG-STETH-001",
+            "GVG-GUZO-CHARGE-001",
+            "GVG-ETR-001",
+            "GVG-MOTO-KIDS-001"
+          ]
+        },
+        {
+          "id": "institution",
+          "label": "I represent an institution",
+          "description": "Workspace, pilot sites, university collaboration, public-sector support, workforce adoption or procurement introductions.",
+          "projectIds": [
+            "GVG-PAVE-TECH-001",
+            "GVG-ETR-001",
+            "GVG-EFVR-001",
+            "GVG-GUZO-CHARGE-001",
+            "GVG-STETH-001"
+          ]
+        },
+        {
+          "id": "sponsor",
+          "label": "I can sponsor a milestone",
+          "description": "Prototype batches, learner cohorts, research equipment, launch campaigns, demonstration events or community programs.",
+          "projectIds": [
+            "GVG-ETR-001",
+            "GVG-EFVR-001",
+            "GVG-STETH-001",
+            "GVG-MOTO-KIDS-001",
+            "GVG-MUDAY-001"
+          ]
+        },
+        {
+          "id": "investor",
+          "label": "I want to discuss investment or JV",
+          "description": "Project-specific investment, commercial partnership or joint venture discussion subject to diligence and formal agreements.",
+          "projectIds": [
+            "GVG-GUZO-CHARGE-001",
+            "GVG-HAYL-001",
+            "GVG-EREFT-001",
+            "GVG-PAVE-DES-001",
+            "GVG-STETH-001"
+          ]
+        }
+      ],
+      "supportPackages": [
+        {
+          "name": "Small support",
+          "range": "$500–$2,500 or in-kind",
+          "description": "Sponsor documents, outreach, campaign design, small tools, expert review or evidence preparation."
+        },
+        {
+          "name": "Pilot support",
+          "range": "$5,000–$25,000",
+          "description": "Support prototype validation, learner placement, market research, project setup or field testing."
+        },
+        {
+          "name": "Institutional support",
+          "range": "Workspace, equipment, pilot access or formal partnership",
+          "description": "Provide facilities, laboratory access, customers, research partners, training adoption or government facilitation."
+        },
+        {
+          "name": "Strategic support",
+          "range": "Project-specific JV, grant, investment or commercial partnership",
+          "description": "Subject to diligence, valuation, legal structuring and signed agreements."
+        }
+      ],
+      "evidenceLibraryIds": [
+        "GVG-ORG-001",
+        "GVG-PAVE-DES-001",
+        "GVG-ETR-001",
+        "GVG-PAVE-TECH-001",
+        "GVG-EFVR-001",
+        "GVG-GUZO-CHARGE-001",
+        "GVG-MUDAY-001",
+        "GVG-STETH-001"
       ]
     },
     "editingModel": "Public project information is maintained in data/projects.json. The app shell remains in index.html."
@@ -108,7 +198,7 @@
       "parentId": "",
       "sourceTitle": "Natan Ayele — Master Project Portfolio & Drive Index (2026)",
       "sourceStatus": "Drive mapped",
-      "updatedAt": "2026-06-20",
+      "updatedAt": "2026-06-21",
       "confidence": "Medium",
       "featured": true,
       "isNew": false,
@@ -118,6 +208,13 @@
         "ACTIVE ECOSYSTEM",
         "READY FOR STRATEGIC PARTNERS",
         "GOVERNANCE SYSTEM ESTABLISHED"
+      ],
+      "whyNow": "A governed platform is needed now to turn the priority projects into fundable pilots with evidence, owners and decision controls.",
+      "evidenceLevel": "Governance system established",
+      "supportPackageFit": [
+        "Small support",
+        "Institutional support",
+        "Strategic support"
       ]
     },
     {
@@ -172,7 +269,7 @@
       "parentId": "GVG-ORG-001",
       "sourceTitle": "PavePath service and operating documentation",
       "sourceStatus": "Drive mapped",
-      "updatedAt": "2026-06-20",
+      "updatedAt": "2026-06-21",
       "confidence": "Medium",
       "featured": true,
       "isNew": false,
@@ -182,6 +279,12 @@
         "PILOT",
         "READY FOR CLIENT PARTNERSHIP",
         "DELIVERY SYSTEM ESTABLISHED"
+      ],
+      "whyNow": "The first recurring client will validate the remote delivery model and fund production-team expansion.",
+      "evidenceLevel": "Website and service model live",
+      "supportPackageFit": [
+        "Pilot support",
+        "Strategic support"
       ]
     },
     {
@@ -236,7 +339,7 @@
       "parentId": "GVG-ORG-001",
       "sourceTitle": "PavePath Technologies master concept, workspace strategy and Government Application Pack",
       "sourceStatus": "Drive mapped; government application pack added",
-      "updatedAt": "2026-06-20",
+      "updatedAt": "2026-06-21",
       "confidence": "Medium",
       "featured": true,
       "isNew": false,
@@ -251,6 +354,13 @@
         "DEVELOPMENT",
         "READY FOR INSTITUTIONAL PARTNERS",
         "TWO DEMONSTRATORS SELECTED"
+      ],
+      "whyNow": "Workspace and equipment partnerships can unlock two approved demonstrators and shared capacity for the wider pipeline.",
+      "evidenceLevel": "Demonstrators selected",
+      "supportPackageFit": [
+        "Institutional support",
+        "Pilot support",
+        "Strategic support"
       ]
     },
     {
@@ -333,7 +443,13 @@
           "type": "safeguarding-learning"
         }
       ],
-      "supportOutcome": "Support will help this project complete its next measurable milestone through documented, project-specific collaboration."
+      "supportOutcome": "Support will help this project complete its next measurable milestone through documented, project-specific collaboration.",
+      "whyNow": "A clear partner or supporter can help this project complete its next documented milestone.",
+      "evidenceLevel": "Concept documented",
+      "supportPackageFit": [
+        "Small support",
+        "Pilot support"
+      ]
     },
     {
       "id": "GVG-GUZO-CHARGE-001",
@@ -347,18 +463,18 @@
       "documentation": 88,
       "impact": 86,
       "strategicScore": 78,
-      "summary": "Guzo Charge is a proposed Addis Ababa EV-charging venture combining charge-point operation, turnkey installation/EPC, locally assembled OpenEVSE-based AC chargers and an OCPP + Telebirr software layer.",
-      "currentMilestone": "A feasibility study, project proposal and investor one-pager have been prepared. The current verdict is conditional go as a service-first hybrid, not a hardware-manufacturing-first play.",
-      "nextDecision": "Validate customs/VAT treatment, charging tariff economics, certification timeline, EVCS licensing requirements and initial site partnerships before deploying seed capital.",
-      "keyRisk": "The venture must validate regulatory costs, tariff assumptions, FX exposure, licensing and certification before moving from documented opportunity to capital deployment.",
+      "summary": "Guzo Charge is a validation-ready EV charging venture for Addis Ababa, combining charge-point operation, turnkey installation, locally assembled OpenEVSE-based AC chargers and an OCPP + Telebirr software layer.",
+      "currentMilestone": "The project has feasibility, project proposal and investor one-pager materials. The next phase must validate the regulatory pathway, tariffs, certification timeline, license fees, incentives, FX exposure, pilot sites and supplier costs before capital deployment.",
+      "nextDecision": "Confirm pilot-site partners, regulatory path, supplier costs and seed/JV structure for a measured validation launch.",
+      "keyRisk": "Capital should not be deployed until customs/VAT treatment, charging tariff assumptions, certification, licensing, FX access, installation partners and first customer sites are validated.",
       "supporterAsk": [
-        "EV charging site hosts in Addis Ababa",
-        "Electrical and EVSE certification advisers",
-        "Telebirr/OCPP software integration partners",
-        "Seed investors or strategic CPO partners",
-        "Government and utility introductions"
+        "EV-sector regulatory adviser",
+        "Hotel, fuel-station or property pilot partner",
+        "OpenEVSE / OCPP technical contributor",
+        "Equipment and installation partner",
+        "Seed or JV discussion partner"
       ],
-      "supportOutcome": "Support will move Guzo Charge from investment-grade documentation to a validated Phase 1 pilot with sites, permits, supplier pathway, localized software and first charging units.",
+      "supportOutcome": "Support will move Guzo Charge from feasibility and investor materials into a validated pilot with confirmed regulatory pathway, supplier costs, installation partners and first customer sites.",
       "publicBadges": [
         "CONDITIONAL GO",
         "SEED-READY VALIDATION",
@@ -404,7 +520,7 @@
       "parentId": "GVG-ORG-001",
       "sourceTitle": "Guzo Charge feasibility study, project proposal and investor one-pager",
       "sourceStatus": "Uploaded project documents added to public release",
-      "updatedAt": "2026-06-20",
+      "updatedAt": "2026-06-21",
       "confidence": "Medium",
       "featured": true,
       "isNew": true,
@@ -412,6 +528,13 @@
         "GVG-PAVE-TECH-001",
         "GVG-ETR-001",
         "GVG-MUDAY-001"
+      ],
+      "whyNow": "Ethiopia’s EV transition is moving faster than charging infrastructure deployment, creating a timely validation window.",
+      "evidenceLevel": "Feasibility and investor one-pager complete",
+      "supportPackageFit": [
+        "Pilot support",
+        "Institutional support",
+        "Strategic support"
       ]
     },
     {
@@ -481,7 +604,13 @@
         }
       ],
       "reviewStatus": "Current",
-      "supportOutcome": "Support will help this project complete its next measurable milestone through documented, project-specific collaboration."
+      "supportOutcome": "Support will help this project complete its next measurable milestone through documented, project-specific collaboration.",
+      "whyNow": "A clear partner or supporter can help this project complete its next documented milestone.",
+      "evidenceLevel": "Concept documented",
+      "supportPackageFit": [
+        "Small support",
+        "Pilot support"
+      ]
     },
     {
       "id": "GVG-MFG-STETH-001",
@@ -531,7 +660,13 @@
       "featured": true,
       "isNew": false,
       "relationships": [],
-      "supportOutcome": "Support will help this project complete its next measurable milestone through documented, project-specific collaboration."
+      "supportOutcome": "Support will help this project complete its next measurable milestone through documented, project-specific collaboration.",
+      "whyNow": "A clear partner or supporter can help this project complete its next documented milestone.",
+      "evidenceLevel": "Concept documented",
+      "supportPackageFit": [
+        "Small support",
+        "Pilot support"
+      ]
     },
     {
       "id": "GVG-MFG-HAYL-001",
@@ -592,7 +727,13 @@
         }
       ],
       "reviewStatus": "Current",
-      "supportOutcome": "Support will help this project complete its next measurable milestone through documented, project-specific collaboration."
+      "supportOutcome": "Support will help this project complete its next measurable milestone through documented, project-specific collaboration.",
+      "whyNow": "A clear partner or supporter can help this project complete its next documented milestone.",
+      "evidenceLevel": "Concept documented",
+      "supportPackageFit": [
+        "Small support",
+        "Pilot support"
+      ]
     },
     {
       "id": "GVG-MFG-EREFT-001",
@@ -653,7 +794,13 @@
         }
       ],
       "reviewStatus": "Current",
-      "supportOutcome": "Support will help this project complete its next measurable milestone through documented, project-specific collaboration."
+      "supportOutcome": "Support will help this project complete its next measurable milestone through documented, project-specific collaboration.",
+      "whyNow": "A clear partner or supporter can help this project complete its next documented milestone.",
+      "evidenceLevel": "Concept documented",
+      "supportPackageFit": [
+        "Small support",
+        "Pilot support"
+      ]
     },
     {
       "id": "GVG-ETR-001",
@@ -707,7 +854,7 @@
       "parentId": "GVG-ORG-001",
       "sourceTitle": "Etraincon assessment and learning-platform documentation",
       "sourceStatus": "Drive mapped",
-      "updatedAt": "2026-06-20",
+      "updatedAt": "2026-06-21",
       "confidence": "Medium",
       "featured": true,
       "isNew": false,
@@ -720,6 +867,13 @@
         "PILOT",
         "READY FOR EMPLOYER PARTNERS",
         "FIRST COURSE COMPLETED"
+      ],
+      "whyNow": "The next step is converting completed training into five verified pilot assignments and one institutional adoption partner.",
+      "evidenceLevel": "First course and assessment completed",
+      "supportPackageFit": [
+        "Small support",
+        "Pilot support",
+        "Institutional support"
       ]
     },
     {
@@ -781,7 +935,13 @@
         "GVG-ETH-MKT-001",
         "GVG-COF-LEG-001"
       ],
-      "supportOutcome": "Support will help this project complete its next measurable milestone through documented, project-specific collaboration."
+      "supportOutcome": "Support will help this project complete its next measurable milestone through documented, project-specific collaboration.",
+      "whyNow": "A clear partner or supporter can help this project complete its next documented milestone.",
+      "evidenceLevel": "Concept documented",
+      "supportPackageFit": [
+        "Small support",
+        "Pilot support"
+      ]
     },
     {
       "id": "GVG-ABOL-001",
@@ -824,7 +984,13 @@
       "featured": false,
       "isNew": false,
       "relationships": [],
-      "supportOutcome": "Support will help this project complete its next measurable milestone through documented, project-specific collaboration."
+      "supportOutcome": "Support will help this project complete its next measurable milestone through documented, project-specific collaboration.",
+      "whyNow": "A clear partner or supporter can help this project complete its next documented milestone.",
+      "evidenceLevel": "Concept documented",
+      "supportPackageFit": [
+        "Small support",
+        "Pilot support"
+      ]
     },
     {
       "id": "GVG-ETH-MKT-001",
@@ -867,7 +1033,13 @@
       "featured": false,
       "isNew": false,
       "relationships": [],
-      "supportOutcome": "Support will help this project complete its next measurable milestone through documented, project-specific collaboration."
+      "supportOutcome": "Support will help this project complete its next measurable milestone through documented, project-specific collaboration.",
+      "whyNow": "A clear partner or supporter can help this project complete its next documented milestone.",
+      "evidenceLevel": "Concept documented",
+      "supportPackageFit": [
+        "Small support",
+        "Pilot support"
+      ]
     },
     {
       "id": "GVG-GOV-001",
@@ -910,7 +1082,13 @@
       "featured": false,
       "isNew": false,
       "relationships": [],
-      "supportOutcome": "Support will help this project complete its next measurable milestone through documented, project-specific collaboration."
+      "supportOutcome": "Support will help this project complete its next measurable milestone through documented, project-specific collaboration.",
+      "whyNow": "A clear partner or supporter can help this project complete its next documented milestone.",
+      "evidenceLevel": "Concept documented",
+      "supportPackageFit": [
+        "Small support",
+        "Pilot support"
+      ]
     },
     {
       "id": "GVG-SYS-ASSET-001",
@@ -969,7 +1147,13 @@
       "relationships": [
         "ALL"
       ],
-      "supportOutcome": "Support will help this project complete its next measurable milestone through documented, project-specific collaboration."
+      "supportOutcome": "Support will help this project complete its next measurable milestone through documented, project-specific collaboration.",
+      "whyNow": "A clear partner or supporter can help this project complete its next documented milestone.",
+      "evidenceLevel": "Concept documented",
+      "supportPackageFit": [
+        "Small support",
+        "Pilot support"
+      ]
     },
     {
       "id": "GVG-CAP-001",
@@ -1012,7 +1196,13 @@
       "featured": false,
       "isNew": false,
       "relationships": [],
-      "supportOutcome": "Support will help this project complete its next measurable milestone through documented, project-specific collaboration."
+      "supportOutcome": "Support will help this project complete its next measurable milestone through documented, project-specific collaboration.",
+      "whyNow": "A clear partner or supporter can help this project complete its next documented milestone.",
+      "evidenceLevel": "Concept documented",
+      "supportPackageFit": [
+        "Small support",
+        "Pilot support"
+      ]
     },
     {
       "id": "GVG-RPM-001",
@@ -1055,7 +1245,13 @@
       "featured": false,
       "isNew": false,
       "relationships": [],
-      "supportOutcome": "Support will help this project complete its next measurable milestone through documented, project-specific collaboration."
+      "supportOutcome": "Support will help this project complete its next measurable milestone through documented, project-specific collaboration.",
+      "whyNow": "A clear partner or supporter can help this project complete its next documented milestone.",
+      "evidenceLevel": "Concept documented",
+      "supportPackageFit": [
+        "Small support",
+        "Pilot support"
+      ]
     },
     {
       "id": "GVG-MUDAY-001",
@@ -1068,7 +1264,7 @@
       "readiness": 64,
       "documentation": 72,
       "impact": 65,
-      "summary": "Muday Marketing is an active Partner of Green Value Group initiatives providing marketing, branding and business development support across the portfolio while serving external clients and developing creative talent.",
+      "summary": "Muday Marketing is an active Green Value Group initiative providing marketing, branding and business development support across the portfolio while serving external clients and developing creative talent.",
       "nextDecision": "Formalize service packages, campaign ownership and measurable business-development targets for each priority initiative.",
       "supporterAsk": [
         "Creative and media partners",
@@ -1101,7 +1297,7 @@
       "parentId": "GVG-ORG-001",
       "sourceTitle": "Muday Business Plan",
       "sourceStatus": "Website verified by portfolio owner; active GVG initiative",
-      "updatedAt": "2026-06-20",
+      "updatedAt": "2026-06-21",
       "confidence": "Medium",
       "featured": true,
       "isNew": false,
@@ -1117,6 +1313,13 @@
         "ACTIVE INITIATIVE",
         "PORTFOLIO GROWTH PARTNER",
         "PUBLIC WEBSITE LIVE"
+      ],
+      "whyNow": "Campaign and business-development capacity is needed now to convert portfolio readiness into supporters, partners and customers.",
+      "evidenceLevel": "Active website and service partner",
+      "supportPackageFit": [
+        "Small support",
+        "Pilot support",
+        "Strategic support"
       ]
     },
     {
@@ -1159,7 +1362,13 @@
       "featured": false,
       "isNew": false,
       "relationships": [],
-      "supportOutcome": "Support will help this project complete its next measurable milestone through documented, project-specific collaboration."
+      "supportOutcome": "Support will help this project complete its next measurable milestone through documented, project-specific collaboration.",
+      "whyNow": "A clear partner or supporter can help this project complete its next documented milestone.",
+      "evidenceLevel": "Concept documented",
+      "supportPackageFit": [
+        "Small support",
+        "Pilot support"
+      ]
     },
     {
       "id": "GVG-COM-DES-001",
@@ -1201,7 +1410,13 @@
       "featured": false,
       "isNew": false,
       "relationships": [],
-      "supportOutcome": "Support will help this project complete its next measurable milestone through documented, project-specific collaboration."
+      "supportOutcome": "Support will help this project complete its next measurable milestone through documented, project-specific collaboration.",
+      "whyNow": "A clear partner or supporter can help this project complete its next documented milestone.",
+      "evidenceLevel": "Concept documented",
+      "supportPackageFit": [
+        "Small support",
+        "Pilot support"
+      ]
     },
     {
       "id": "GVG-PROD-WORK-001",
@@ -1243,7 +1458,13 @@
       "featured": false,
       "isNew": false,
       "relationships": [],
-      "supportOutcome": "Support will help this project complete its next measurable milestone through documented, project-specific collaboration."
+      "supportOutcome": "Support will help this project complete its next measurable milestone through documented, project-specific collaboration.",
+      "whyNow": "A clear partner or supporter can help this project complete its next documented milestone.",
+      "evidenceLevel": "Concept documented",
+      "supportPackageFit": [
+        "Small support",
+        "Pilot support"
+      ]
     },
     {
       "id": "GVG-AGR-SCM-001",
@@ -1286,7 +1507,13 @@
       "featured": false,
       "isNew": false,
       "relationships": [],
-      "supportOutcome": "Support will help this project complete its next measurable milestone through documented, project-specific collaboration."
+      "supportOutcome": "Support will help this project complete its next measurable milestone through documented, project-specific collaboration.",
+      "whyNow": "A clear partner or supporter can help this project complete its next documented milestone.",
+      "evidenceLevel": "Concept documented",
+      "supportPackageFit": [
+        "Small support",
+        "Pilot support"
+      ]
     },
     {
       "id": "GVG-COF-LEG-001",
@@ -1325,7 +1552,13 @@
       "featured": false,
       "isNew": false,
       "relationships": [],
-      "supportOutcome": "Support will help this project complete its next measurable milestone through documented, project-specific collaboration."
+      "supportOutcome": "Support will help this project complete its next measurable milestone through documented, project-specific collaboration.",
+      "whyNow": "A clear partner or supporter can help this project complete its next documented milestone.",
+      "evidenceLevel": "Concept documented",
+      "supportPackageFit": [
+        "Small support",
+        "Pilot support"
+      ]
     },
     {
       "id": "GVG-CRYPTO-LEG-001",
@@ -1364,7 +1597,13 @@
       "featured": false,
       "isNew": false,
       "relationships": [],
-      "supportOutcome": "Support will help this project complete its next measurable milestone through documented, project-specific collaboration."
+      "supportOutcome": "Support will help this project complete its next measurable milestone through documented, project-specific collaboration.",
+      "whyNow": "A clear partner or supporter can help this project complete its next documented milestone.",
+      "evidenceLevel": "Concept documented",
+      "supportPackageFit": [
+        "Small support",
+        "Pilot support"
+      ]
     }
   ],
   "supporters": []
