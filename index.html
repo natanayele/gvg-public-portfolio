@@ -216,15 +216,37 @@ tr:hover td{background:var(--gbg)}
 /* PUBLIC RELEASE v0.7.1 */
 .unlock-section{background:var(--gbg);border:1px solid #b8dfc8;border-radius:10px;padding:14px}
 .unlock-section h3{color:var(--green)}
+
+/* V0.8 SUPPORTER CONVERSION */
+.notice.loading{border-color:#d6a21e;background:#fff8e7;color:#744d00}
+.notice.success{border-color:#b8dfc8;background:#f2fbf5;color:#1a7a4a}
+.trust-notice{margin:18px 0 20px;border-left:4px solid var(--green)}
+.audience-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:14px}
+.audience-btn,.path-card{border:1px solid var(--border);background:var(--surface);border-radius:11px;padding:10px 13px;color:var(--green);font-weight:800;box-shadow:var(--shadow)}
+.audience-btn:hover,.path-card:hover{transform:translateY(-1px);box-shadow:var(--shadowl)}
+.opportunity-grid,.path-grid,.package-grid,.evidence-grid,.support-route-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.opportunity-card,.path-card,.package-card,.evidence-card,.support-route{background:var(--surface);border:1px solid var(--border);border-radius:var(--r);box-shadow:var(--shadow);padding:18px;display:flex;flex-direction:column;gap:10px}
+.opportunity-card{border-top:4px solid var(--green)}
+.opportunity-card h3,.package-card h3,.evidence-card h3{font-size:1.02rem;letter-spacing:-.02em}
+.opportunity-card p,.package-card p,.evidence-card p,.path-card span,.support-route span{color:var(--muted);font-size:.84rem;line-height:1.55}
+.package-card b{color:var(--green);font-size:.92rem}
+.mini-proof{font-size:.78rem;color:var(--muted);line-height:1.45;background:var(--surface2);border:1px solid var(--border);border-radius:9px;padding:8px 9px;margin-top:8px}
+.mini-proof b{color:var(--green)}
+.card-badges{margin-top:10px}
+.project-card:focus{outline:3px solid rgba(26,122,74,.25);outline-offset:3px}
+.support-route{border-left:4px solid var(--green)}
+@media(max-width:1100px){.opportunity-grid,.path-grid,.package-grid,.evidence-grid,.support-route-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:700px){.opportunity-grid,.path-grid,.package-grid,.evidence-grid,.support-route-grid{grid-template-columns:1fr}.audience-actions{flex-direction:column}.audience-btn{width:100%;text-align:left}}
+
 </style>
-<meta content="Explore Green Value Group projects in engineering, workforce development, applied research, local manufacturing and high-impact venture development." name="description"/><meta content="Green Value Group Portfolio" property="og:title"/><meta content="Projects, demonstrators and partnership opportunities from Green Value Group." property="og:description"/><meta content="website" property="og:type"/><meta content="public-showcase-v0.7.1" name="gvg-release"/></head>
+<meta content="Explore Green Value Group projects in engineering, workforce development, applied research, local manufacturing and high-impact venture development." name="description"/><meta content="Green Value Group Portfolio" property="og:title"/><meta content="Projects, demonstrators and partnership opportunities from Green Value Group." property="og:description"/><meta content="website" property="og:type"/><meta content="public-showcase-v0.8.0" name="gvg-release"/></head>
 <body>
 <div class="topbar"><div class="tbi">
 <div class="brand">
 <div class="mark">GV</div>
-<div><div>GVG Portfolio Navigator</div><div class="brand-sub">Green Value Group · Public Showcase v0.7.1</div></div>
+<div><div>GVG Portfolio Navigator</div><div class="brand-sub">Green Value Group · Public Showcase v0.8.0</div></div>
 </div>
-<nav class="nav"><button class="active" data-view="showcase">Showcase</button><button data-view="portfolio">Projects</button><button data-view="support">Get involved</button></nav>
+<nav class="nav"><button class="active" data-view="showcase">Overview</button><button data-anchor="priorityOpportunities">Priority Opportunities</button><button data-view="portfolio">Projects</button><button data-anchor="evidenceLibrary">Evidence Library</button><button data-view="support">Get involved</button></nav>
 </div></div>
 <main class="shell">
 <!-- SHOWCASE -->
@@ -234,7 +256,13 @@ tr:hover td{background:var(--gbg)}
 <div class="eyebrow">Engineering · Skills · Manufacturing · Research · Local Value</div>
 <h1>From organized ideas<br/><em>to governed implementation.</em></h1>
 <p class="hero-desc">Green Value Group is building an Ethiopia-first portfolio that connects professional engineering, technical workforce development, applied research and locally implemented products through one accountable operating system.</p>
-<div class="actions"><button class="btn primary" data-go="portfolio">Explore projects</button><button class="btn ghost" data-go="support">Help, partner or invest</button></div>
+<div class="actions"><button class="btn primary" data-anchor="priorityOpportunities">See priority opportunities</button><button class="btn ghost" data-go="support">Help, partner or invest</button></div>
+<div class="audience-actions">
+  <button class="audience-btn" data-audience="expert">I can contribute expertise</button>
+  <button class="audience-btn" data-audience="institution">I represent an institution</button>
+  <button class="audience-btn" data-audience="sponsor">I can sponsor a milestone</button>
+  <button class="audience-btn" data-audience="investor">I want to discuss investment or JV</button>
+</div>
 </div>
 <div class="hero-card">
 <h3>Portfolio readiness</h3>
@@ -246,6 +274,10 @@ tr:hover td{background:var(--gbg)}
 </div>
 </div>
 <div class="metrics" id="heroMetrics"></div>
+<div id="dataStatus" class="notice loading">Loading public project information…</div>
+<div class="notice trust-notice">
+  This public dashboard is not a token sale, securities offering, crowdfunding campaign or promise of financial return. Project-specific investment, sponsorship or joint-venture discussions require diligence, legal review and formal agreements.
+</div>
 <div class="progress-strip">
 <div class="progress-item"><b>Governance established</b><span>Named portfolio leadership, review authority, Tuesday exception reviews and immediate critical-risk escalation.</span></div>
 <div class="progress-item"><b>Two demonstrators selected</b><span>Local Stethoscope Manufacturing and the PavePath EFVR Center lead the first hub implementation phase.</span></div>
@@ -277,9 +309,31 @@ tr:hover td{background:var(--gbg)}
 <div class="demo-card"><div class="num">02</div><h3>PavePath EFVR Center and VibeSense</h3><p>A starter laboratory and field-monitoring pilot designed to convert vibration, sensing and resonance research into infrastructure diagnostics, technical training and evidence-based services.</p><div class="pills" style="margin-top:13px"><span class="pill green">Applied research</span><span class="pill">Infrastructure sensing</span><span class="pill">Research partnership</span></div></div>
 </div>
 </section>
+
+<section id="priorityOpportunities">
+<div class="section-head">
+<div><div class="eyebrow">Priority opportunities now</div><h2>Where support can create visible progress</h2></div>
+<p>These opportunities are selected because a contributor, institution, sponsor or qualified partner can help unlock a clear 30–90 day milestone.</p>
+</div>
+<div class="opportunity-grid" id="opportunityGrid"></div>
+</section>
+<section id="audiencePaths">
+<div class="section-head">
+<div><div class="eyebrow">Choose your pathway</div><h2>Find the projects that fit your role</h2></div>
+<p>Different supporters should see different projects. Select a path to filter the opportunity board and pre-fill the contact route.</p>
+</div>
+<div class="path-grid" id="audiencePathGrid"></div>
+</section>
 <section>
 <div class="section-head">
-<div><div class="eyebrow">July execution priorities</div><h2>Four projects under immediate management focus</h2></div>
+<div><div class="eyebrow">Support packages</div><h2>Practical ways to help</h2></div>
+<p>Each support package can be tied to a documented milestone and public progress update.</p>
+</div>
+<div class="package-grid" id="supportPackagesGrid"></div>
+</section>
+<section>
+<div class="section-head">
+<div><div class="eyebrow">July execution priorities</div><h2>Projects under immediate management focus</h2></div>
 <p>Each priority has a measurable outcome, responsible owners and evidence requirements in the internal portfolio dashboard.</p>
 </div>
 <div class="grid" id="priorityGrid"></div>
@@ -309,6 +363,14 @@ tr:hover td{background:var(--gbg)}
 <div class="target"><b>5</b><span>Scheduled institutional/grant packages</span></div>
 <div class="target"><b>High-impact</b><span>Third-party venture support mandate</span></div>
 </div>
+</section>
+
+<section id="evidenceLibrary">
+<div class="section-head">
+<div><div class="eyebrow">Evidence library</div><h2>Proof before ambition</h2></div>
+<p>Each evidence item links to public-safe documentation, websites or one-pagers. Internal files remain private.</p>
+</div>
+<div class="evidence-grid" id="evidenceGrid"></div>
 </section>
 <section>
 <div class="section-head">
@@ -360,6 +422,7 @@ tr:hover td{background:var(--gbg)}
   This public page is for introductions and project discussions. It is not a securities
   offer, token sale, crowdfunding page or promise of financial return.
 </div>
+<div class="support-route-grid" id="supportRouteGrid"></div>
 <div class="support-grid">
 <div class="support-box">
 <h3>Ways to participate</h3>
@@ -404,7 +467,7 @@ tr:hover td{background:var(--gbg)}
 <!-- ROADMAP -->
 </main>
 <footer class="footer">
-<div class="shell">Green Value Group Portfolio · Public Showcase v0.7.1 · Projects are subject to validation, partnership and formal approvals.</div>
+<div class="shell">Green Value Group Portfolio · Public Showcase v0.8.0 · Projects are subject to validation, partnership and formal approvals.</div>
 </footer>
 <!-- MODAL -->
 <div class="modal" id="projectModal">
@@ -417,6 +480,8 @@ tr:hover td{background:var(--gbg)}
 <div class="modal-section"><h3>Progress and current activity</h3><p id="modalMilestone"></p></div>
 <div class="modal-section"><h3>Next measurable outcome</h3><p id="modalDecision"></p></div>
 <div class="modal-section"><h3>What must be in place</h3><p id="modalRisk"></p></div>
+<div class="modal-section"><h3>Why act now</h3><p id="modalWhyNow"></p></div>
+<div class="modal-section"><h3>Proof level</h3><p id="modalEvidenceLevel"></p></div>
 <div class="modal-section"><h3>Ways to participate</h3><div class="pills" id="modalAsks"></div></div>
 <div class="modal-section unlock-section"><h3>What your support will unlock</h3><p id="modalUnlock"></p></div>
 <div class="modal-section"><h3>Project evidence and resources</h3><div class="asset-list" id="modalAssets"></div></div>
@@ -486,18 +551,54 @@ function nav(view){
   
   if(view==='support'){supportOptions();}
 }
-document.querySelectorAll('[data-view]').forEach(b=>b.onclick=()=>nav(b.dataset.view));
-document.querySelectorAll('[data-go]').forEach(b=>b.onclick=()=>nav(b.dataset.go));
+
+
+
+document.addEventListener('click',e=>{
+  const viewBtn=e.target.closest('[data-view]');
+  if(viewBtn){nav(viewBtn.dataset.view);return;}
+  const goBtn=e.target.closest('[data-go]');
+  if(goBtn){nav(goBtn.dataset.go);return;}
+  const anchorBtn=e.target.closest('[data-anchor]');
+  if(anchorBtn){
+    const target=$(anchorBtn.dataset.anchor);
+    if(target)target.scrollIntoView({behavior:'smooth',block:'start'});
+    return;
+  }
+  const projectBtn=e.target.closest('.view-project,.project-card');
+  if(projectBtn){
+    e.preventDefault();
+    e.stopPropagation();
+    openProject(projectBtn.dataset.projectId);
+    return;
+  }
+  const audienceBtn=e.target.closest('[data-audience]');
+  if(audienceBtn){
+    useAudiencePath(audienceBtn.dataset.audience);
+    return;
+  }
+});
+document.addEventListener('keydown',e=>{
+  if((e.key==='Enter'||e.key===' ')&&e.target.classList?.contains('project-card')){
+    e.preventDefault();
+    openProject(e.target.dataset.projectId);
+  }
+  if(e.key==='Escape')$('projectModal')?.classList.remove('open');
+});
 
 // ── HELPERS ───────────────────────────────────────────────────────────────────
 function metricEl(label,value,green=true){
   return `<div class="metric"><b style="${green?'':'color:var(--blue)'}">${esc(value)}</b><span>${esc(label)}</span></div>`;
 }
 function card(p){
-  return `<article class="card" onclick="openProject('${p.id}')">
+  const badges=(p.publicBadges?.length?p.publicBadges:[p.status,p.priority,p.evidenceLevel]).slice(0,3);
+  return `<article class="card project-card" data-project-id="${esc(p.id)}" tabindex="0" role="button" aria-label="View ${esc(p.name)}">
   <div class="card-top"><span class="id-tag">${esc(p.id)}</span><span class="tag ${stCls(p.status)}">${esc(p.status)}</span></div>
   <h3>${esc(p.name)} ${p.isNew?'<span class="new-badge">New</span>':''}</h3>
   <p>${esc(p.summary)}</p>
+  <div class="mini-proof"><b>Why now:</b> ${esc(p.whyNow||'A supporter can help complete the next documented milestone.')}</div>
+  <div class="mini-proof"><b>Proof:</b> ${esc(p.evidenceLevel||'Concept documented')}</div>
+  <div class="pills card-badges">${badges.map(x=>`<span class="pill">${esc(x)}</span>`).join('')}</div>
   <div class="card-foot">
     <div class="bars">
       <div class="bar-row"><span>Readiness</span><div class="bar"><i style="width:${p.readiness}%"></i></div><b>${p.readiness}</b></div>
@@ -505,11 +606,63 @@ function card(p){
       <div class="bar-row"><span>Impact</span><div class="bar impact"><i style="width:${p.impact}%"></i></div><b>${p.impact}</b></div>
     </div>
     <div class="card-actions">
-      <button class="text-btn" onclick="event.stopPropagation();openProject('${p.id}')">View project →</button>
+      <button class="text-btn view-project" data-project-id="${esc(p.id)}">View project →</button>
       <span class="pill">${esc((p.publicBadges&&p.publicBadges[1])||p.priority)}</span>
     </div>
   </div>
 </article>`;
+}
+
+
+function opportunityCard(p){
+  return `<div class="opportunity-card">
+    <div class="pills">${(p.publicBadges||[p.status,p.priority]).slice(0,3).map(x=>`<span class="pill">${esc(x)}</span>`).join('')}</div>
+    <h3>${esc(p.name)}</h3>
+    <p>${esc(p.summary)}</p>
+    <div class="mini-proof"><b>Why act now:</b> ${esc(p.whyNow)}</div>
+    <div class="mini-proof"><b>Next:</b> ${esc(p.nextDecision||'Next decision pending.')}</div>
+    <button class="btn primary view-project" data-project-id="${esc(p.id)}">View project</button>
+  </div>`;
+}
+function renderPriorityOpportunities(){
+  const ids=currentMeta.showcase?.priorityOpportunityIds||['GVG-PAVE-DES-001','GVG-ETR-001','GVG-PAVE-TECH-001','GVG-GUZO-CHARGE-001','GVG-MUDAY-001'];
+  $('opportunityGrid').innerHTML=ids.map(id=>projects.find(p=>p.id===id)).filter(Boolean).map(opportunityCard).join('');
+}
+function renderAudiencePaths(){
+  const paths=currentMeta.showcase?.audiencePaths||[];
+  const makePath=x=>`<button class="path-card" data-audience="${esc(x.id)}">
+    <b>${esc(x.label)}</b><span>${esc(x.description)}</span>
+  </button>`;
+  $('audiencePathGrid').innerHTML=paths.map(makePath).join('');
+  $('supportRouteGrid').innerHTML=paths.map(x=>`<div class="support-route">
+    <b>${esc(x.label)}</b><span>${esc(x.description)}</span>
+    <button class="text-btn audience-contact" data-audience="${esc(x.id)}">Use this pathway →</button>
+  </div>`).join('');
+}
+function renderSupportPackages(){
+  const packages=currentMeta.showcase?.supportPackages||[];
+  $('supportPackagesGrid').innerHTML=packages.map(x=>`<div class="package-card">
+    <h3>${esc(x.name)}</h3><b>${esc(x.range)}</b><p>${esc(x.description)}</p>
+  </div>`).join('');
+}
+function renderEvidenceLibrary(){
+  const ids=currentMeta.showcase?.evidenceLibraryIds||[];
+  const rows=ids.map(id=>projects.find(p=>p.id===id)).filter(Boolean);
+  $('evidenceGrid').innerHTML=rows.map(p=>`<div class="evidence-card">
+    <div class="tag ${stCls(p.status)}">${esc(p.status)}</div>
+    <h3>${esc(p.name)}</h3>
+    <p><b>Evidence level:</b> ${esc(p.evidenceLevel||'Concept documented')}</p>
+    <p><b>Public resource:</b> ${p.publicUrl?`<a href="${esc(p.publicUrl)}" target="_blank" rel="noopener">Open resource ↗</a>`:'Resource pending'}</p>
+    <button class="text-btn view-project" data-project-id="${esc(p.id)}">View project →</button>
+  </div>`).join('');
+}
+function useAudiencePath(id){
+  const path=(currentMeta.showcase?.audiencePaths||[]).find(x=>x.id===id);
+  if(!path)return;
+  nav('support');
+  const typeMap={expert:'Technical contribution',institution:'Institutional partnership',sponsor:'Grant or sponsorship',investor:'Investment or joint venture'};
+  if($('pcType'))$('pcType').value=typeMap[id]||'General collaboration';
+  if($('pcMessage'))$('pcMessage').value=`I am interested in the ${path.label} pathway. ${path.description}`;
 }
 
 // ── SHOWCASE ──────────────────────────────────────────────────────────────────
@@ -529,6 +682,12 @@ function renderShowcase(){
   $('priorityGrid').innerHTML=priorityIds.map(id=>projects.find(p=>p.id===id)).filter(Boolean).map(card).join('');
   $('featuredGrid').innerHTML=projects.filter(p=>p.featured).sort((a,b)=>b.strategicScore-a.strategicScore).map(card).join('');
   $('submissionTimeline').innerHTML=(S.submissionSequence||[]).map(x=>`<div class="timeline-item"><time>${esc(x.date)}</time><b>${esc(x.label)}</b></div>`).join('');
+  renderPriorityOpportunities();
+  renderAudiencePaths();
+  renderSupportPackages();
+  renderEvidenceLibrary();
+  const status=$('dataStatus');
+  if(status){status.textContent=`Public project data loaded: ${projects.length} projects · ${A.length} mapped assets · version ${currentMeta.version||'0.8.0'}.`;status.classList.remove('loading');status.classList.add('success');}
 }
 
 // ── PORTFOLIO ─────────────────────────────────────────────────────────────────
@@ -563,6 +722,8 @@ function openProject(id){
   $('modalMilestone').textContent=p.currentMilestone||'Milestone not yet recorded.';
   $('modalDecision').textContent=p.nextDecision;
   $('modalRisk').textContent=p.keyRisk||'Implementation requirements are being documented.';
+  $('modalWhyNow').textContent=p.whyNow||'A supporter can help complete the next documented milestone.';
+  $('modalEvidenceLevel').textContent=p.evidenceLevel||'Concept documented';
   $('modalUnlock').textContent=p.supportOutcome||'Support will help complete the next documented milestone.';
   $('modalPills').innerHTML=(p.publicBadges?.length?p.publicBadges:[p.status,p.archetype,p.sector,p.priority]).map(x=>`<span class="pill">${esc(x)}</span>`).join('');
   $('modalAsks').innerHTML=(p.supporterAsk||[]).map(x=>`<span class="pill green">${esc(x)}</span>`).join('')||'<span style="color:var(--muted);font-size:.84rem">No specific asks at this time.</span>';
