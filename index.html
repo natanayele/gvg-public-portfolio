@@ -238,16 +238,29 @@ tr:hover td{background:var(--gbg)}
 @media(max-width:1100px){.opportunity-grid,.path-grid,.package-grid,.evidence-grid,.support-route-grid{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:700px){.opportunity-grid,.path-grid,.package-grid,.evidence-grid,.support-route-grid{grid-template-columns:1fr}.audience-actions{flex-direction:column}.audience-btn{width:100%;text-align:left}}
 
+
+/* V0.8.1 LIVE REPO IMPROVEMENTS */
+.quick-action-strip{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin:16px 0 22px}
+.quick-action{border:1px solid #b8dfc8;background:#f2fbf5;border-radius:13px;padding:14px;text-align:left;box-shadow:var(--shadow);display:grid;gap:5px;color:var(--text)}
+.quick-action b{color:var(--green);font-size:.86rem}
+.quick-action span{color:var(--muted);font-size:.76rem;line-height:1.45}
+.quick-action:hover{transform:translateY(-1px);box-shadow:var(--shadowl)}
+.action-section{background:var(--ybg);border:1px solid rgba(168,112,16,.25);border-radius:10px;padding:14px}
+.action-section h3{color:var(--gold)}
+@media(max-width:900px){.quick-action-strip{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.quick-action-strip{grid-template-columns:1fr}}
+
 </style>
-<meta content="Explore Green Value Group projects in engineering, workforce development, applied research, local manufacturing and high-impact venture development." name="description"/><meta content="Green Value Group Portfolio" property="og:title"/><meta content="Projects, demonstrators and partnership opportunities from Green Value Group." property="og:description"/><meta content="website" property="og:type"/><meta content="public-showcase-v0.8.0" name="gvg-release"/></head>
+<meta content="Explore Green Value Group projects in engineering, workforce development, applied research, local manufacturing and high-impact venture development." name="description"/><meta content="Green Value Group Portfolio" property="og:title"/><meta content="Projects, demonstrators and partnership opportunities from Green Value Group." property="og:description"/><meta content="website" property="og:type"/><meta content="public-showcase-v0.8.1" name="gvg-release"/></head>
 <body>
 <div class="topbar"><div class="tbi">
 <div class="brand">
 <div class="mark">GV</div>
-<div><div>GVG Portfolio Navigator</div><div class="brand-sub">Green Value Group · Public Showcase v0.8.0</div></div>
+<div><div>GVG Portfolio Navigator</div><div class="brand-sub">Green Value Group · Public Showcase v0.8.1</div></div>
 </div>
 <nav class="nav"><button class="active" data-view="showcase">Overview</button><button data-anchor="priorityOpportunities">Priority Opportunities</button><button data-view="portfolio">Projects</button><button data-anchor="evidenceLibrary">Evidence Library</button><button data-view="support">Get involved</button></nav>
 </div></div>
+<noscript><div class="shell"><div class="notice">This dashboard requires JavaScript to load project data from data/projects.json.</div></div></noscript>
 <main class="shell">
 <!-- SHOWCASE -->
 <div class="view active" id="showcase">
@@ -278,6 +291,7 @@ tr:hover td{background:var(--gbg)}
 <div class="notice trust-notice">
   This public dashboard is not a token sale, securities offering, crowdfunding campaign or promise of financial return. Project-specific investment, sponsorship or joint-venture discussions require diligence, legal review and formal agreements.
 </div>
+<div class="quick-action-strip" id="quickActionStrip"></div>
 <div class="progress-strip">
 <div class="progress-item"><b>Governance established</b><span>Named portfolio leadership, review authority, Tuesday exception reviews and immediate critical-risk escalation.</span></div>
 <div class="progress-item"><b>Two demonstrators selected</b><span>Local Stethoscope Manufacturing and the PavePath EFVR Center lead the first hub implementation phase.</span></div>
@@ -467,7 +481,7 @@ tr:hover td{background:var(--gbg)}
 <!-- ROADMAP -->
 </main>
 <footer class="footer">
-<div class="shell">Green Value Group Portfolio · Public Showcase v0.8.0 · Projects are subject to validation, partnership and formal approvals.</div>
+<div class="shell">Green Value Group Portfolio · Public Showcase v0.8.1 · Projects are subject to validation, partnership and formal approvals.</div>
 </footer>
 <!-- MODAL -->
 <div class="modal" id="projectModal">
@@ -481,6 +495,7 @@ tr:hover td{background:var(--gbg)}
 <div class="modal-section"><h3>Next measurable outcome</h3><p id="modalDecision"></p></div>
 <div class="modal-section"><h3>What must be in place</h3><p id="modalRisk"></p></div>
 <div class="modal-section"><h3>Why act now</h3><p id="modalWhyNow"></p></div>
+<div class="modal-section action-section"><h3>Best next action</h3><p id="modalNextAction"></p></div>
 <div class="modal-section"><h3>Proof level</h3><p id="modalEvidenceLevel"></p></div>
 <div class="modal-section"><h3>Ways to participate</h3><div class="pills" id="modalAsks"></div></div>
 <div class="modal-section unlock-section"><h3>What your support will unlock</h3><p id="modalUnlock"></p></div>
@@ -624,6 +639,13 @@ function opportunityCard(p){
     <button class="btn primary view-project" data-project-id="${esc(p.id)}">View project</button>
   </div>`;
 }
+
+function renderQuickActions(){
+  const actions=currentMeta.showcase?.quickActions||[];
+  const el=$('quickActionStrip');
+  if(!el)return;
+  el.innerHTML=actions.map(a=>`<button class="quick-action" data-audience="${esc(a.audience)}"><b>${esc(a.label)}</b><span>${esc(a.description)}</span></button>`).join('');
+}
 function renderPriorityOpportunities(){
   const ids=currentMeta.showcase?.priorityOpportunityIds||['GVG-PAVE-DES-001','GVG-ETR-001','GVG-PAVE-TECH-001','GVG-GUZO-CHARGE-001','GVG-MUDAY-001'];
   $('opportunityGrid').innerHTML=ids.map(id=>projects.find(p=>p.id===id)).filter(Boolean).map(opportunityCard).join('');
@@ -682,12 +704,13 @@ function renderShowcase(){
   $('priorityGrid').innerHTML=priorityIds.map(id=>projects.find(p=>p.id===id)).filter(Boolean).map(card).join('');
   $('featuredGrid').innerHTML=projects.filter(p=>p.featured).sort((a,b)=>b.strategicScore-a.strategicScore).map(card).join('');
   $('submissionTimeline').innerHTML=(S.submissionSequence||[]).map(x=>`<div class="timeline-item"><time>${esc(x.date)}</time><b>${esc(x.label)}</b></div>`).join('');
+  renderQuickActions();
   renderPriorityOpportunities();
   renderAudiencePaths();
   renderSupportPackages();
   renderEvidenceLibrary();
   const status=$('dataStatus');
-  if(status){status.textContent=`Public project data loaded: ${projects.length} projects · ${A.length} mapped assets · version ${currentMeta.version||'0.8.0'}.`;status.classList.remove('loading');status.classList.add('success');}
+  if(status){status.textContent=`Public project data loaded: ${projects.length} projects · ${A.length} mapped assets · version ${currentMeta.version||'0.8.1'}.`;status.classList.remove('loading');status.classList.add('success');}
 }
 
 // ── PORTFOLIO ─────────────────────────────────────────────────────────────────
@@ -720,9 +743,10 @@ function openProject(id){
   $('modalTitle').textContent=p.name;
   $('modalSummary').textContent=p.summary;
   $('modalMilestone').textContent=p.currentMilestone||'Milestone not yet recorded.';
-  $('modalDecision').textContent=p.nextDecision;
+  $('modalDecision').textContent=p.nextDecision||'Next measurable outcome is being documented.';
   $('modalRisk').textContent=p.keyRisk||'Implementation requirements are being documented.';
   $('modalWhyNow').textContent=p.whyNow||'A supporter can help complete the next documented milestone.';
+  $('modalNextAction').textContent=p.nextPublicAction||'Offer one specific contribution tied to the next milestone.';
   $('modalEvidenceLevel').textContent=p.evidenceLevel||'Concept documented';
   $('modalUnlock').textContent=p.supportOutcome||'Support will help complete the next documented milestone.';
   $('modalPills').innerHTML=(p.publicBadges?.length?p.publicBadges:[p.status,p.archetype,p.sector,p.priority]).map(x=>`<span class="pill">${esc(x)}</span>`).join('');
@@ -738,7 +762,13 @@ function openProject(id){
 }
 $('closeModal').onclick=()=>$('projectModal').classList.remove('open');
 $('projectModal').onclick=e=>{if(e.target.id==='projectModal')e.currentTarget.classList.remove('open')};
-$('modalSupport').onclick=()=>{$('projectModal').classList.remove('open');nav('support');if($('supportProject'))$('supportProject').value=activeProject;};
+$('modalSupport').onclick=()=>{
+  const p=projects.find(x=>x.id===activeProject);
+  $('projectModal').classList.remove('open');
+  nav('support');
+  if($('supportProject'))$('supportProject').value=activeProject;
+  if(p&&$('pcMessage'))$('pcMessage').value=`I want to support ${p.name}. Best next action: ${p.nextPublicAction||p.nextDecision||'Please share the most useful next step.'}`;
+};
 
 // ── PUBLIC CONTACT ─────────────────────────────────────────────────────────────
 function supportOptions(){
@@ -746,6 +776,10 @@ function supportOptions(){
   if(!select)return;
   select.innerHTML='<option value="">Portfolio-wide / choose later</option>'+
     projects.filter(p=>p.status!=='Legacy').map(p=>`<option value="${p.id}">${esc(p.name)}</option>`).join('');
+  select.onchange=()=>{
+    const p=projects.find(x=>x.id===select.value);
+    if(p&&$('pcMessage')&&!$('pcMessage').value.trim())$('pcMessage').value=`I am interested in ${p.name}. ${p.nextPublicAction||p.nextDecision||''}`.trim();
+  };
 }
 const sendContact=$('sendPublicContact');
 if(sendContact) sendContact.onclick=()=>{
@@ -777,7 +811,13 @@ if(sendContact) sendContact.onclick=()=>{
 function download(name,text,type){const u=URL.createObjectURL(new Blob([text],{type})),a=document.createElement('a');a.href=u;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(u),500)}
 
 // ── INIT ──────────────────────────────────────────────────────────────────────
-function renderAll(){renderShowcase();renderPortfolio();supportOptions();if($('portfolioCount'))$('portfolioCount').textContent=projects.length;}
+function renderAll(){
+  if(!projects.length){showDataLoadError(new Error('No projects found in data/projects.json'));return;}
+  renderShowcase();
+  renderPortfolio();
+  supportOptions();
+  if($('portfolioCount'))$('portfolioCount').textContent=projects.length;
+}
 async function initializeApp(){
   try{
     await loadRegistry();
