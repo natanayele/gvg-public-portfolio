@@ -1,13 +1,13 @@
 {
   "meta": {
     "title": "GVG Portfolio Registry",
-    "version": "0.8.0",
-    "updatedAt": "2026-06-21",
+    "version": "0.8.1",
+    "updatedAt": "2026-06-22",
     "projectCount": 24,
     "assetCount": 51,
     "source": "Updated master portfolio, ChatGPT project history and Drive-verified project records",
     "publicDataNotice": "Public-compatible dataset. This dashboard is not a securities offering, token sale, crowdfunding page or promise of financial return. Internal cash balances, cap tables, private Drive links, personal data, confidential legal records and draft token structures remain excluded.",
-    "changeSummary": "Implemented supporter-conversion dashboard: event-delegated project cards, priority opportunities, audience paths, proof badges, support packages, evidence library, stronger public disclaimer and improved Guzo Charge positioning.",
+    "changeSummary": "Reviewed live GitHub Pages repository and added conversion improvements: direct action strip, project-specific contact prefill, safer modal fallbacks, route-aware support messages and clearer README/editing instructions.",
     "showcase": {
       "headline": "From organized ideas to governed implementation",
       "subheadline": "Green Value Group is building an Ethiopia-first portfolio of engineering services, technical talent, applied research and locally implemented products.",
@@ -141,6 +141,28 @@
         "GVG-GUZO-CHARGE-001",
         "GVG-MUDAY-001",
         "GVG-STETH-001"
+      ],
+      "quickActions": [
+        {
+          "label": "Refer a client",
+          "audience": "expert",
+          "description": "Introduce a U.S. engineering firm, employer, institution or customer that can validate a priority project."
+        },
+        {
+          "label": "Offer a pilot site",
+          "audience": "institution",
+          "description": "Provide workspace, facility access, a field-test site, employer assignments or institutional adoption."
+        },
+        {
+          "label": "Sponsor a milestone",
+          "audience": "sponsor",
+          "description": "Support a prototype batch, learner cohort, research equipment, launch campaign or evidence package."
+        },
+        {
+          "label": "Discuss JV / investment",
+          "audience": "investor",
+          "description": "Start a project-specific diligence conversation for qualified commercial or investment partners."
+        }
       ]
     },
     "editingModel": "Public project information is maintained in data/projects.json. The app shell remains in index.html."
@@ -215,7 +237,8 @@
         "Small support",
         "Institutional support",
         "Strategic support"
-      ]
+      ],
+      "nextPublicAction": "Use the Get involved form to offer one specific contribution tied to the next milestone."
     },
     {
       "id": "GVG-PAVE-DES-001",
@@ -269,7 +292,7 @@
       "parentId": "GVG-ORG-001",
       "sourceTitle": "PavePath service and operating documentation",
       "sourceStatus": "Drive mapped",
-      "updatedAt": "2026-06-21",
+      "updatedAt": "2026-06-22",
       "confidence": "Medium",
       "featured": true,
       "isNew": false,
@@ -285,7 +308,8 @@
       "supportPackageFit": [
         "Pilot support",
         "Strategic support"
-      ]
+      ],
+      "nextPublicAction": "Refer one U.S. civil engineering firm or become a pilot client for a defined delivery package."
     },
     {
       "id": "GVG-PAVE-TECH-001",
@@ -339,7 +363,7 @@
       "parentId": "GVG-ORG-001",
       "sourceTitle": "PavePath Technologies master concept, workspace strategy and Government Application Pack",
       "sourceStatus": "Drive mapped; government application pack added",
-      "updatedAt": "2026-06-21",
+      "updatedAt": "2026-06-22",
       "confidence": "Medium",
       "featured": true,
       "isNew": false,
@@ -361,7 +385,8 @@
         "Institutional support",
         "Pilot support",
         "Strategic support"
-      ]
+      ],
+      "nextPublicAction": "Introduce a workspace, equipment, university or government partner for the first demonstrator phase."
     },
     {
       "id": "GVG-MOTO-KIDS-001",
@@ -449,7 +474,8 @@
       "supportPackageFit": [
         "Small support",
         "Pilot support"
-      ]
+      ],
+      "nextPublicAction": "Use the Get involved form to offer one specific contribution tied to the next milestone."
     },
     {
       "id": "GVG-GUZO-CHARGE-001",
@@ -520,7 +546,7 @@
       "parentId": "GVG-ORG-001",
       "sourceTitle": "Guzo Charge feasibility study, project proposal and investor one-pager",
       "sourceStatus": "Uploaded project documents added to public release",
-      "updatedAt": "2026-06-21",
+      "updatedAt": "2026-06-22",
       "confidence": "Medium",
       "featured": true,
       "isNew": true,
@@ -535,7 +561,8 @@
         "Pilot support",
         "Institutional support",
         "Strategic support"
-      ]
+      ],
+      "nextPublicAction": "Introduce a pilot site, EV-sector adviser, installation partner or seed/JV validation partner."
     },
     {
       "id": "GVG-PAVE-EFVR-001",
@@ -610,7 +637,8 @@
       "supportPackageFit": [
         "Small support",
         "Pilot support"
-      ]
+      ],
+      "nextPublicAction": "Use the Get involved form to offer one specific contribution tied to the next milestone."
     },
     {
       "id": "GVG-MFG-STETH-001",
@@ -666,7 +694,8 @@
       "supportPackageFit": [
         "Small support",
         "Pilot support"
-      ]
+      ],
+      "nextPublicAction": "Use the Get involved form to offer one specific contribution tied to the next milestone."
     },
     {
       "id": "GVG-MFG-HAYL-001",
@@ -733,7 +762,8 @@
       "supportPackageFit": [
         "Small support",
         "Pilot support"
-      ]
+      ],
+      "nextPublicAction": "Use the Get involved form to offer one specific contribution tied to the next milestone."
     },
     {
       "id": "GVG-MFG-EREFT-001",
@@ -800,7 +830,8 @@
       "supportPackageFit": [
         "Small support",
         "Pilot support"
-      ]
+      ],
+      "nextPublicAction": "Use the Get involved form to offer one specific contribution tied to the next milestone."
     },
     {
       "id": "GVG-ETR-001",
@@ -854,7 +885,7 @@
       "parentId": "GVG-ORG-001",
       "sourceTitle": "Etraincon assessment and learning-platform documentation",
       "sourceStatus": "Drive mapped",
-      "updatedAt": "2026-06-21",
+      "updatedAt": "2026-06-22",
       "confidence": "Medium",
       "featured": true,
       "isNew": false,
@@ -874,7 +905,8 @@
         "Small support",
         "Pilot support",
         "Institutional support"
-      ]
+      ],
+      "nextPublicAction": "Offer one pilot assignment or introduce one institution that can validate learner outcomes."
     },
     {
       "id": "GVG-GIGC-001",
@@ -941,7 +973,8 @@
       "supportPackageFit": [
         "Small support",
         "Pilot support"
-      ]
+      ],
+      "nextPublicAction": "Use the Get involved form to offer one specific contribution tied to the next milestone."
     },
     {
       "id": "GVG-ABOL-001",
@@ -990,7 +1023,8 @@
       "supportPackageFit": [
         "Small support",
         "Pilot support"
-      ]
+      ],
+      "nextPublicAction": "Use the Get involved form to offer one specific contribution tied to the next milestone."
     },
     {
       "id": "GVG-ETH-MKT-001",
@@ -1039,7 +1073,8 @@
       "supportPackageFit": [
         "Small support",
         "Pilot support"
-      ]
+      ],
+      "nextPublicAction": "Use the Get involved form to offer one specific contribution tied to the next milestone."
     },
     {
       "id": "GVG-GOV-001",
@@ -1088,7 +1123,8 @@
       "supportPackageFit": [
         "Small support",
         "Pilot support"
-      ]
+      ],
+      "nextPublicAction": "Use the Get involved form to offer one specific contribution tied to the next milestone."
     },
     {
       "id": "GVG-SYS-ASSET-001",
@@ -1153,7 +1189,8 @@
       "supportPackageFit": [
         "Small support",
         "Pilot support"
-      ]
+      ],
+      "nextPublicAction": "Use the Get involved form to offer one specific contribution tied to the next milestone."
     },
     {
       "id": "GVG-CAP-001",
@@ -1202,7 +1239,8 @@
       "supportPackageFit": [
         "Small support",
         "Pilot support"
-      ]
+      ],
+      "nextPublicAction": "Use the Get involved form to offer one specific contribution tied to the next milestone."
     },
     {
       "id": "GVG-RPM-001",
@@ -1251,7 +1289,8 @@
       "supportPackageFit": [
         "Small support",
         "Pilot support"
-      ]
+      ],
+      "nextPublicAction": "Use the Get involved form to offer one specific contribution tied to the next milestone."
     },
     {
       "id": "GVG-MUDAY-001",
@@ -1297,7 +1336,7 @@
       "parentId": "GVG-ORG-001",
       "sourceTitle": "Muday Business Plan",
       "sourceStatus": "Website verified by portfolio owner; active GVG initiative",
-      "updatedAt": "2026-06-21",
+      "updatedAt": "2026-06-22",
       "confidence": "Medium",
       "featured": true,
       "isNew": false,
@@ -1320,7 +1359,8 @@
         "Small support",
         "Pilot support",
         "Strategic support"
-      ]
+      ],
+      "nextPublicAction": "Sponsor or refer a campaign partner that helps GVG initiatives reach customers and supporters."
     },
     {
       "id": "GVG-COM-SAFE-001",
@@ -1368,7 +1408,8 @@
       "supportPackageFit": [
         "Small support",
         "Pilot support"
-      ]
+      ],
+      "nextPublicAction": "Use the Get involved form to offer one specific contribution tied to the next milestone."
     },
     {
       "id": "GVG-COM-DES-001",
@@ -1416,7 +1457,8 @@
       "supportPackageFit": [
         "Small support",
         "Pilot support"
-      ]
+      ],
+      "nextPublicAction": "Use the Get involved form to offer one specific contribution tied to the next milestone."
     },
     {
       "id": "GVG-PROD-WORK-001",
@@ -1464,7 +1506,8 @@
       "supportPackageFit": [
         "Small support",
         "Pilot support"
-      ]
+      ],
+      "nextPublicAction": "Use the Get involved form to offer one specific contribution tied to the next milestone."
     },
     {
       "id": "GVG-AGR-SCM-001",
@@ -1513,7 +1556,8 @@
       "supportPackageFit": [
         "Small support",
         "Pilot support"
-      ]
+      ],
+      "nextPublicAction": "Use the Get involved form to offer one specific contribution tied to the next milestone."
     },
     {
       "id": "GVG-COF-LEG-001",
@@ -1558,7 +1602,8 @@
       "supportPackageFit": [
         "Small support",
         "Pilot support"
-      ]
+      ],
+      "nextPublicAction": "Use the Get involved form to offer one specific contribution tied to the next milestone."
     },
     {
       "id": "GVG-CRYPTO-LEG-001",
@@ -1603,7 +1648,8 @@
       "supportPackageFit": [
         "Small support",
         "Pilot support"
-      ]
+      ],
+      "nextPublicAction": "Use the Get involved form to offer one specific contribution tied to the next milestone."
     }
   ],
   "supporters": []
