@@ -2,20 +2,17 @@
 
 ## Release
 
-`public-showcase-v0.8.0`
+`public-showcase-v0.8.1`
 
-## What changed in v0.8.0
+## Live repository review update
 
-- Removed fragile inline project-card click handlers.
-- Added delegated click handling for project cards and buttons.
-- Added visible project-data loading and error status.
-- Added Priority Opportunities section.
-- Added audience paths for experts, institutions, sponsors and investors/JV partners.
-- Added support packages.
-- Added evidence library.
-- Added `whyNow`, `evidenceLevel` and `supportPackageFit` project fields.
-- Strengthened the public disclaimer.
-- Improved Guzo Charge positioning as a conditional, validation-ready EV charging opportunity.
+This release reviews and improves the active GitHub Pages dashboard. It keeps the v0.8 supporter-conversion structure and adds:
+
+- A direct action strip for referral, pilot-site, sponsorship and JV/investment pathways.
+- Project-specific contact prefill from the modal.
+- Safer modal fallbacks for projects with incomplete fields.
+- Hardened project-data loading behavior.
+- Clearer editing fields for `nextPublicAction`, `whyNow` and `evidenceLevel`.
 
 ## File structure
 
@@ -25,10 +22,6 @@
 - `EDIT_PROJECTS.md` — safe editing guide
 - `.nojekyll` — GitHub Pages compatibility
 
-## GitHub Pages update
+## Public boundary
 
-Upload or replace all files from this package at the repository root. Confirm the project data path is:
-
-`/data/projects.json`
-
-Do not upload the folder itself as a subfolder.
+Do not publish internal cash balances, private Drive links, cap tables, personal data, draft token terms or unapproved investment claims.

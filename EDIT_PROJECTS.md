@@ -13,10 +13,20 @@ All public project records are stored in:
 - `supporterAsk` — Ways to participate
 - `supportOutcome` — What support will unlock
 - `whyNow` — Why a supporter should act now
+- `nextPublicAction` — The one action a visitor can take this week
 - `evidenceLevel` — Public proof level
 - `publicBadges` — Up to three short project badges
 - `supportPackageFit` — Which support packages fit the project
 - `publicUrl` — Official public website or one-pager
+
+## Recommended formula
+
+For every project, write:
+
+1. What is ready now.
+2. What must happen next.
+3. Who can help.
+4. What that help unlocks.
 
 ## Rules
 
