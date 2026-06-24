@@ -1,7 +1,6 @@
 name: Deploy to cPanel
 
 on:
-  workflow_dispatch:
   push:
     branches:
       - main
@@ -16,19 +15,18 @@ jobs:
       - name: Get latest code
         uses: actions/checkout@v4
 
-      - name: Check DNS from GitHub runner
+      - name: Check FTP DNS
         run: |
           nslookup ftp.greenvaluegroup.com
-          nslookup greenvaluegroup.com
 
-      - name: Sync files via FTPS
+      - name: Sync files via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.4.0
         with:
           server: ftp.greenvaluegroup.com
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           port: 21
-          protocol: ftps
+          protocol: ftp
           server-dir: ./
           exclude: |
             **/.git*
