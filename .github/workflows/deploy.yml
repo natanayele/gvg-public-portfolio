@@ -16,14 +16,10 @@ jobs:
       - name: Get latest code
         uses: actions/checkout@v4
 
-      - name: Check FTP DNS
-        run: |
-          nslookup ftp.greenvaluegroup.com
-
       - name: Sync files via FTPS
         uses: SamKirkland/FTP-Deploy-Action@v4.4.0
         with:
-          server: ftp.greenvaluegroup.com
+          server: 91.204.209.39
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           port: 21
