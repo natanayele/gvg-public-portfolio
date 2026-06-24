@@ -8,24 +8,26 @@ on:
 
 jobs:
   web-deploy:
-    name: 🎉 Deploy to cPanel
+    name: Deploy to cPanel
     runs-on: ubuntu-latest
+
     steps:
-    - name: 🚚 Get latest code
-      uses: actions/checkout@v4
-    
-    - name: 📂 Sync files via FTP
-      uses: SamKirkland/FTP-Deploy-Action@v4.3.4
-      with:
-        server: ${{ secrets.FTP_SERVER }}
-        username: ${{ secrets.FTP_USERNAME }}
-        password: ${{ secrets.FTP_PASSWORD }}
-        server-dir: /portfolio.greenvaluegroup.com/
-        exclude: |
-          **/.git*
-          **/.git*/**
-          **/.github*/**
-          README.md
-          PUBLISH_CHECKLIST.md
-          EDIT_PROJECTS.md
-          SHARE_MESSAGES.md
+      - name: Get latest code
+        uses: actions/checkout@v6
+
+      - name: Sync files via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.4.0
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: portfolio.greenvaluegroup.com/
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/.github*/**
+            **/node_modules/**
+            README.md
+            PUBLISH_CHECKLIST.md
+            EDIT_PROJECTS.md
+            SHARE_MESSAGES.md
