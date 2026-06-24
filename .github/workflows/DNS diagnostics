@@ -1,0 +1,13 @@
+      - name: DNS diagnostics
+        run: |
+          echo "Default resolver:"
+          nslookup ftp.greenvaluegroup.com || true
+
+          echo "Cloudflare resolver:"
+          nslookup ftp.greenvaluegroup.com 1.1.1.1 || true
+
+          echo "Google resolver:"
+          nslookup ftp.greenvaluegroup.com 8.8.8.8 || true
+
+          echo "Domain nameservers:"
+          nslookup -type=NS greenvaluegroup.com || true
