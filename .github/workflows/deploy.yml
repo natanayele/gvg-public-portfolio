@@ -16,21 +16,18 @@ jobs:
       - name: Get latest code
         uses: actions/checkout@v4
 
-      - name: Check DNS and IP
+      - name: Check FTP DNS
         run: |
-          echo "Testing DNS and IP connection targets"
-          nslookup ftp.greenvaluegroup.com || true
-          nslookup portfolio.greenvaluegroup.com || true
-          echo "Using direct server IP: 91.204.209.39"
+          nslookup ftp.greenvaluegroup.com
 
-      - name: Sync files via FTP
+      - name: Sync files via FTPS
         uses: SamKirkland/FTP-Deploy-Action@v4.4.0
         with:
-          server: 91.204.209.39
-          username: greenvbw@portfolio.greenvaluegroup.com
+          server: ftp.greenvaluegroup.com
+          username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           port: 21
-          protocol: ftp
+          protocol: ftps
           server-dir: ./
           exclude: |
             **/.git*
